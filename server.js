@@ -10,6 +10,8 @@ app.set('view engine', 'ejs')
 
 app.use('/articles', articleRouter)
 
+app.use(express.urlencoded({ extended: false }))
+
 app.get('/', (req, res) => {
     const articles = [{
         title: 'Test Article',
